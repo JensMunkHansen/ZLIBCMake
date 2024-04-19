@@ -1,0 +1,5 @@
+get_filename_component(PACKAGE_PREFIX_DIR "${CMAKE_CURRENT_LIST_DIR}/../../../" ABSOLUTE)
+
+####################################################################################
+
+include ( "${CMAKE_CURRENT_LIST_DIR}/zlib-targets.cmake" )
