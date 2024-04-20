@@ -5,7 +5,7 @@ project(Usage)
 list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_LIST_DIR}/../CMake)
 include(DumpVariables)
 
-set(CMAKE_FIND_ROOT_PATH  "/home/jmh/github/ZLIBCMake/install")
+# set(CMAKE_FIND_ROOT_PATH  "/home/jmh/github/ZLIBCMake/install")
 
 # Find ZLIB
 set(ZLIB_USE_STATIC_LIBS 1)
