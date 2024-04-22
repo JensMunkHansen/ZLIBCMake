@@ -18,6 +18,7 @@ cmake --build build/usage --config Debug --parallel 20 -- -maxCpuCount:20
 
 build\usage\Release\main.exe
 build\usage\Debug\main.exe
+goto :eof
 
 :usage
 @echo Usage: %0 static/shared

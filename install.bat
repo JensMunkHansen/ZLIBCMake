@@ -16,7 +16,8 @@ if %myArg% == shared (
 )
 
 cmake --build build/library  --config Release --parallel 20 -- -maxCpuCount:20
-REM cmake --build build/library  --config Debug --parallel 20 -- -maxCpuCount:20
+cmake --build build/library  --config Debug --parallel 20 -- -maxCpuCount:20
+goto :eof
 
 :usage
 @echo Usage: %0 static/shared
