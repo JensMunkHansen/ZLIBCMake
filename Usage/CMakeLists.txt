@@ -14,16 +14,16 @@ message("CMAKE_PREFIX_PATH: ${CMAKE_PREFIX_PATH}")
 
 # Find ZLIB
 if (NOT BUILD_SHARED_LIBS)
-  set(ZLIB_USE_STATIC_LIBS 1)
+  set(ZLIB_USE_STATIC_LIBS ON)
 endif()
 find_package(ZLIB 1.3.1 EXACT REQUIRED)
 
-cmake_dump_variables(zlib)
-cmake_dump_variables(ZLIB)
+find_package(Boost COMPONENTS iostreams REQUIRED)
 
 add_executable(main main.cxx)
 target_link_libraries(main PRIVATE ZLIB::ZLIB)
-
+target_link_libraries(main PUBLIC Boost::boost Boost::iostreams)
+cmake_dump_variables()
 
 if (BUILD_SHARED_LIBS)
 
