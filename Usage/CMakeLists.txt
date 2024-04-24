@@ -18,11 +18,8 @@ if (NOT BUILD_SHARED_LIBS)
 endif()
 find_package(ZLIB 1.3.1 EXACT REQUIRED)
 
-find_package(Boost COMPONENTS iostreams REQUIRED)
-
 add_executable(main main.cxx)
 target_link_libraries(main PRIVATE ZLIB::ZLIB)
-target_link_libraries(main PUBLIC Boost::boost Boost::iostreams)
 cmake_dump_variables()
 
 if (BUILD_SHARED_LIBS)
