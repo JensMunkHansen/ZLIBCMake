@@ -15,21 +15,9 @@ ExternalProject_Add(ZLIB
   CMAKE_ARGS -DZLIB_BUILD_EXAMPLES=OFF -DBUILD_SHARED_LIBS=OFF -DCMAKE_INSTALL_PREFIX=${CMAKE_INSTALL_PREFIX})
 
 
-ExternalProject_Add(BoostExternal
-  URL https://github.com/boostorg/boost/releases/download/boost-1.83.0/boost-1.83.0.tar.gz
-  DEPENDS ZLIB
-  CMAKE_ARGS
-  -DCMAKE_INSTALL_PREFIX=${CMAKE_INSTALL_PREFIX}
-  -DBUILD_SHARED_LIBS=OFF
-  -DZLIB_INCLUDE_DIR=${CMAKE_INSTALL_PREFIX}/include
-  -DZLIB_USE_STATIC_LIBS=ON
-  -DBOOST_INCLUDE_LIBRARIES=iostreams
-  -DBOOST_IOSTREAMS_ENABLE_ZSTD=OFF  
-  -DBOOST_ENABLE_MPI=OFF)
-
-
+set(_ZLIB_ROOT ${CMAKE_INSTALL_PREFIX}/include)
 # We simply copy the standard FindZLIB.cmake into zlib-targets.cmake and make zlib-config.cmake include this
-configure_file(${CMAKE_CURRENT_LIST_DIR}/config/zlib-config.cmake.in "${CMAKE_INSTALL_PREFIX}/lib/cmake/zlib-config.cmake")
-configure_file(${CMAKE_CURRENT_LIST_DIR}/config/FindZLIB.cmake "${CMAKE_INSTALL_PREFIX}/lib/cmake/zlib-targets.cmake")
+configure_file(${CMAKE_CURRENT_LIST_DIR}/config/zlib-config.cmake.in "${CMAKE_INSTALL_PREFIX}/lib/cmake/ZLIB/zlib-config.cmake")
+configure_file(${CMAKE_CURRENT_LIST_DIR}/config/FindZLIB.cmake "${CMAKE_INSTALL_PREFIX}/lib/cmake/ZLIB/zlib-targets.cmake" @ONLY)
 
 

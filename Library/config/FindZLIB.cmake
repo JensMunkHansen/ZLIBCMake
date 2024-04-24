@@ -62,6 +62,8 @@ module where to look.
 
 set(_ZLIB_SEARCHES)
 
+set(ZLIB_ROOT @_ZLIB_ROOT@)
+
 # Search ZLIB_ROOT first if it is set.
 if(ZLIB_ROOT)
   set(_ZLIB_SEARCH_ROOT PATHS ${ZLIB_ROOT} NO_DEFAULT_PATH)
