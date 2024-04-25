@@ -17,7 +17,9 @@ ExternalProject_Add(ZLIB
 
 set(_ZLIB_ROOT ${CMAKE_INSTALL_PREFIX}/include)
 # We simply copy the standard FindZLIB.cmake into zlib-targets.cmake and make zlib-config.cmake include this
-configure_file(${CMAKE_CURRENT_LIST_DIR}/config/zlib-config.cmake.in "${CMAKE_INSTALL_PREFIX}/lib/cmake/ZLIB/zlib-config.cmake")
+configure_file(${CMAKE_CURRENT_LIST_DIR}/config/zlib-config.cmake.in "${CMAKE_INSTALL_PREFIX}/lib/cmake/ZLIB/zlib-config.cmake" @ONLY)
 configure_file(${CMAKE_CURRENT_LIST_DIR}/config/FindZLIB.cmake "${CMAKE_INSTALL_PREFIX}/lib/cmake/ZLIB/zlib-targets.cmake" @ONLY)
+configure_file(${CMAKE_CURRENT_LIST_DIR}/config/SelectLibraryConfigurations.cmake "${CMAKE_INSTALL_PREFIX}/lib/cmake/ZLIB/SelectLibraryConfigurations.cmake" @ONLY)
+
 
 
