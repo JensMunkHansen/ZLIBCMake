@@ -1,5 +1,5 @@
 # Utility function for dumping variables
-function(cmake_dump_variables)
+function(dump_variables)
   get_cmake_property(_variableNames VARIABLES)
   list (SORT _variableNames)
   foreach (_variableName ${_variableNames})
